@@ -1,33 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" style="cursor: none;">
+<html lang="en" style="cursor: none">
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
-        $("#follower").hover(
-          function () {
-            var mouseX = 0,
-              mouseY = 0;
-            $(document).mousemove(function (e) {
-              mouseX = e.pageX;
-              mouseY = e.pageY;
-            });
+        var mouseX = 0,
+          mouseY = 0;
+        $(document).mousemove(function (e) {
+          mouseX = e.pageX;
+          mouseY = e.pageY;
+        });
 
-            // cache the selector
-            var follower = $("#follower");
-            var xp = 0,
-              yp = 0;
-            var loop = setInterval(function () {
-              // change 12 to alter damping higher is slower
-              xp += (mouseX - xp) / 1;
-              yp += (mouseY - yp) / 1;
-              follower.css({ left: xp, top: yp });
-            }, 30);
-          },
-          function () {
-            console.log("wink wink");
-          }
-        );
+        // cache the selector
+        var follower = $("#lipstick");
+        var xp = 0,
+          yp = 0;
+        var loop = setInterval(function () {
+          // change 12 to alter damping higher is slower
+          xp += (mouseX - xp) / 1;
+          yp += (mouseY - yp) / 1;
+          follower.css({ left: xp, top: yp });
+        }, 30);
       });
       function getRandomColor() {
         var letters = "0123456789ABCDEF";
@@ -39,18 +32,27 @@
         // Good lipstick color: rgb(245, 6, 21)
       }
       function getRandomLipColor() {
-          colors = [ "#932943", "#E586A5", "rgb(180, 60, 105)", "rgb(162, 104, 112)", "rgb(230, 42, 73)", "rgb(245, 157, 118)", "rgb(232, 186, 180)", "#A00C30" ]
-          return colors[Math.floor(Math.random() * colors.length)]
+        colors = [
+          "#932943",
+          "#E586A5",
+          "rgb(180, 60, 105)",
+          "rgb(162, 104, 112)",
+          "rgb(230, 42, 73)",
+          "rgb(245, 157, 118)",
+          "rgb(232, 186, 180)",
+          "#A00C30",
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
       }
     </script>
     <title>Lipstick Simulator 💄</title>
     <!--Thanks to Freepik on flaticon for the Icon-->
-    <link rel="icon" type="image/x-icon" href="./res/favicon.ico">
-    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <meta charset="utf-8" />
   </head>
-  <body style="background-color: bisque;">
+  <body style="background-color: bisque">
     <span
-      id="follower"
+      id="lipstick"
       style="
         border: none;
         font-size: xxx-large;
