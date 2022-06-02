@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#follower").hover(
+          function () {
+            var mouseX = 0,
+              mouseY = 0;
+            $(document).mousemove(function (e) {
+              mouseX = e.pageX;
+              mouseY = e.pageY;
+            });
+
+            // cache the selector
+            var follower = $("#follower");
+            var xp = 0,
+              yp = 0;
+            var loop = setInterval(function () {
+              // change 12 to alter damping higher is slower
+              xp += (mouseX - xp) / 1;
+              yp += (mouseY - yp) / 1;
+              follower.css({ left: xp, top: yp });
+            }, 30);
+          },
+          function () {
+            console.log("wink wink");
+          }
+        );
+      });
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    </script>
+    <title>Lipstick Simulator 💄</title>
+  </head>
+  <body style="background-color: bisque">
+    <span
+      id="follower"
+      style="
+        border: none;
+        font-size: xxx-large;
+        background-color: transparent;
+        user-select: none;
+        left: 5px;
+        top: 5px;
+        position: relative;
+        z-index: 99999;
+      "
+      >💄</span>
+    <p
+      id="lips"
+      style="
+        font-size: 500px;
+        color: #E586A5;
+        text-align: center;
+        user-select: none;
+        position: fixed;
+        top: 15%;
+        left: 35%;
+        margin: 0px;
+      "
+      onclick="document.getElementById('lips').style.color = getRandomColor()"
+    >
+      🗢
+    </p>
+  </body>
+</html>
