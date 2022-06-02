@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="cursor: none;">
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
@@ -36,9 +36,10 @@
           color += letters[Math.floor(Math.random() * 16)];
         }
         return color;
+        // Good lipstick color: rgb(245, 6, 21)
       }
       function getRandomLipColor() {
-          colors = [ "#932943", "#E586A5", "rgb(180, 60, 105)", "rgb(162, 104, 112)", "rgb(230, 42, 73)" ]
+          colors = [ "#932943", "#E586A5", "rgb(180, 60, 105)", "rgb(162, 104, 112)", "rgb(230, 42, 73)", "rgb(245, 157, 118)", "rgb(232, 186, 180)", "#A00C30" ]
           return colors[Math.floor(Math.random() * colors.length)]
       }
     </script>
@@ -47,7 +48,7 @@
     <link rel="icon" type="image/x-icon" href="./res/favicon.ico">
     <meta charset="utf-8">
   </head>
-  <body style="background-color: bisque; cursor: none;">
+  <body style="background-color: bisque;">
     <span
       id="follower"
       style="
