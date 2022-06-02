@@ -36,10 +36,14 @@
         }
         return color;
       }
+      function getRandomLipColor() {
+          colors = [ "#932943", "#E586A5", "rgb(180, 60, 105)", "rgb(162, 104, 112)", "rgb(230, 42, 73)" ]
+          return colors[Math.floor(Math.random() * colors.length)]
+      }
     </script>
     <title>Lipstick Simulator 💄</title>
   </head>
-  <body style="background-color: bisque">
+  <body style="background-color: bisque; cursor: none;">
     <span
       id="follower"
       style="
@@ -52,12 +56,13 @@
         position: relative;
         z-index: 99999;
       "
-      >💄</span>
+      >💄</span
+    >
     <p
       id="lips"
       style="
         font-size: 500px;
-        color: #E586A5;
+        color: #e586a5;
         text-align: center;
         user-select: none;
         position: fixed;
@@ -69,5 +74,8 @@
     >
       🗢
     </p>
+    <script>
+      document.getElementById("lips").style.color = getRandomLipColor();
+    </script>
   </body>
 </html>
